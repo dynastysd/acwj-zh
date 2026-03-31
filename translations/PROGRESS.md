@@ -37,8 +37,8 @@
 |-----|------|------|--------|---------|-----|
 | Part 3 | Operator Precedence | ✅ 已完成 | - | 2026-03-19 | MD文档 + 源代码注释 |
 | Part 4 | An Actual Compiler | ✅ 已完成 | - | 2026-03-19 | MD文档 + 源代码注释 |
-| Part 5 | Statements | ⏳ 待开始 | - | - | 语句 |
-| Part 6 | Variables | ⏳ 待开始 | - | - | 变量 |
+| Part 5 | Statements | ✅ 已完成 | - | 2026-03-31 | MD文档 + 源代码注释 |
+| Part 6 | Variables | ✅ 已完成 | - | 2026-03-31 | MD文档 + 源代码注释 |
 | Part 7 | Comparison Operators | ⏳ 待开始 | - | - | 比较运算符 |
 | Part 8 | If Statements | ⏳ 待开始 | - | - | If 语句 |
 | Part 9 | While Loops | ⏳ 待开始 | - | - | While 循环 |
@@ -170,6 +170,8 @@
 | Part 2 | `scan.c`, `main.c`, `tree.c`, `interp.c`, `expr.c` | ✅ 已完成 |
 | Part 3 | `scan.c`, `main.c`, `tree.c`, `interp.c`, `expr.c`, `expr2.c` | ✅ 已完成 |
 | Part 4 | `scan.c`, `main.c`, `tree.c`, `interp.c`, `gen.c`, `expr.c`, `cg.c`, `cgn.c` | ✅ 已完成 |
+| Part 5 | `scan.c`, `stmt.c`, `misc.c`, `main.c`, `gen.c`, `expr.c`, `tree.c` | ✅ 已完成 |
+| Part 6 | `scan.c`, `stmt.c`, `misc.c`, `main.c`, `gen.c`, `expr.c`, `tree.c`, `decl.c`, `sym.c` | ✅ 已完成 |
 
 **源代码翻译规范**：参见 `GUIDELINES.md`
 
@@ -177,10 +179,10 @@
 
 ## 统计数据
 
-- **MD文档已完成**: 5 / 65 (7.7%)
-- **源代码注释已完成**: Part 1-4 (100% for these chapters)
+- **MD文档已完成**: 7 / 65 (10.8%)
+- **源代码注释已完成**: Part 1-6 (100% for these chapters)
 - **进行中**: 0
-- **待开始**: 60 章节 MD + 源代码
+- **待开始**: 58 章节 MD + 源代码
 
 ---
 

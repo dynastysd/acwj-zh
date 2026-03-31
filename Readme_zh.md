@@ -10,10 +10,10 @@
  + [第 0 章](00_Introduction/Readme_zh.md)：旅程引言
  + [第 1 章](01_Scanner/Readme_zh.md)：词法扫描引言
  + [第 2 章](02_Parser/Readme_zh.md)：解析引言
- + [第 3 章](03_Precedence/Readme.md)：运算符优先级
- + [第 4 章](04_Assembly/Readme.md)：一个真正的编译器
- + [第 5 章](05_Statements/Readme.md)：语句
- + [第 6 章](06_Variables/Readme.md)：变量
+ + [第 3 章](03_Precedence/Readme_zh.md)：运算符优先级
+ + [第 4 章](04_Assembly/Readme_zh.md)：一个真正的编译器
+ + [第 5 章](05_Statements/Readme_zh.md)：语句
+ + [第 6 章](06_Variables/Readme_zh.md)：变量
  + [第 7 章](07_Comparisons/Readme.md)：比较运算符
  + [第 8 章](08_If_Statements/Readme.md)：If 语句
  + [第 9 章](09_While_Loops/Readme.md)：While 循环
