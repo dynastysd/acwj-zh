@@ -1,5 +1,11 @@
 # 编译器编写之旅
 
+**📖 中文（当前）** &nbsp;|&nbsp; [![English](https://img.shields.io/badge/English-英文-blue?logo=github)](README.md)
+
+---
+
+> 💡 **提示**：你正在阅读中文版。如需切换到英文原版，请点击上方的蓝色 English 按钮。
+
 在这个 GitHub 仓库中，我正在记录自己编写一个 C 语言子集的自编译编译器的旅程。
 我也把细节写了出来，这样如果你想跟随的话，就会有对我做了什么、为什么这么做、以及一些编译原理参考文献的解释。
 
@@ -14,8 +20,8 @@
  + [第 4 章](04_Assembly/Readme_zh.md)：一个真正的编译器
  + [第 5 章](05_Statements/Readme_zh.md)：语句
  + [第 6 章](06_Variables/Readme_zh.md)：变量
- + [第 7 章](07_Comparisons/Readme.md)：比较运算符
- + [第 8 章](08_If_Statements/Readme.md)：If 语句
+ + [第 7 章](07_Comparisons/Readme_zh.md)：比较运算符
+ + [第 8 章](08_If_Statements/Readme_zh.md)：If 语句
  + [第 9 章](09_While_Loops/Readme.md)：While 循环
  + [第 10 章](10_For_Loops/Readme.md)：For 循环
  + [第 11 章](11_Functions_pt1/Readme.md)：函数，第一部分

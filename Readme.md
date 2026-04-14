@@ -1,5 +1,13 @@
 # A Compiler Writing Journey
 
+**📖 English (Current)** &nbsp;|&nbsp; [![中文](https://img.shields.io/badge/中文-中文版-blue?logo=github)](Readme_zh.md)
+
+---
+
+> 💡 **Tip**: You are reading the English version. Click the blue "中文" button above to switch to the Chinese version.
+
+---
+
 In this Github repository, I'm documenting my journey to write a
 self-compiling compiler for a subset of the C language.
 I'm also writing out the details so that,
