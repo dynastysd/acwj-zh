@@ -1,0 +1,80 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+
+// 结构和枚举定义
+// Copyright (c) 2019 Warren Toomey, GPL3
+
+#define TEXTLEN		512	// 输入中符号的长度
+#define NSYMBOLS        1024	// 符号表条目数量
+
+// 词法单元类型
+enum {
+  T_EOF,
+  // 运算符
+  T_PLUS, T_MINUS,
+  T_STAR, T_SLASH,
+  T_EQ, T_NE,
+  T_LT, T_GT, T_LE, T_GE,
+  // 类型关键字
+  T_VOID, T_CHAR, T_INT, T_LONG,
+  // 结构词法单元
+  T_INTLIT, T_SEMI, T_ASSIGN, T_IDENT,
+  T_LBRACE, T_RBRACE, T_LPAREN, T_RPAREN,
+  T_AMPER, T_LOGAND,
+  // 其他关键字
+  T_PRINT, T_IF, T_ELSE, T_WHILE, T_FOR, T_RETURN
+};
+
+// 词法单元结构
+struct token {
+  int token;			// 来自上面枚举的词法单元类型
+  int intvalue;			// 对于 T_INTLIT，整数值
+};
+
+// AST 节点类型。前几个与
+// 相关的词法单元对齐
+enum {
+  A_ADD = 1, A_SUBTRACT, A_MULTIPLY, A_DIVIDE,
+  A_EQ, A_NE, A_LT, A_GT, A_LE, A_GE,
+  A_INTLIT,
+  A_IDENT, A_LVIDENT, A_ASSIGN, A_PRINT, A_GLUE,
+  A_IF, A_WHILE, A_FUNCTION, A_WIDEN, A_RETURN,
+  A_FUNCCALL, A_DEREF, A_ADDR
+};
+
+// 原始类型
+enum {
+  P_NONE, P_VOID, P_CHAR, P_INT, P_LONG,
+  P_VOIDPTR, P_CHARPTR, P_INTPTR, P_LONGPTR
+};
+
+// 抽象语法树结构
+struct ASTnode {
+  int op;			// "操作"要在此树上执行
+  int type;			// 任何此树生成的表达式的类型
+  struct ASTnode *left;		// 左、中、右子树
+  struct ASTnode *mid;
+  struct ASTnode *right;
+  union {			// 对于 A_INTLIT，整数值
+    int intvalue;		// 对于 A_IDENT，符号槽号
+    int id;			// 对于 A_FUNCTION，符号槽号
+  } v;				// 对于 A_FUNCCALL，符号槽号
+};
+
+#define NOREG	-1		// 当 AST 生成
+				// 函数没有寄存器返回时使用 NOREG
+
+// 结构类型
+enum {
+  S_VARIABLE, S_FUNCTION
+};
+
+// 符号表结构
+struct symtable {
+  char *name;			// 符号名称
+  int type;			// 符号的原始类型
+  int stype;			// 符号的结构类型
+  int endlabel;			// 对于 S_FUNCTION，结束标签
+};

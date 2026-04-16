@@ -27,9 +27,9 @@
  + [第 11 章](11_Functions_pt1/Readme_zh.md)：函数，第一部分
  + [第 12 章](12_Types_pt1/Readme_zh.md)：类型，第一部分
  + [第 13 章](13_Functions_pt2/Readme_zh.md)：函数，第二部分
- + [第 14 章](14_ARM_Platform/Readme.md)：生成 ARM 汇编代码
- + [第 15 章](15_Pointers_pt1/Readme.md)：指针，第一部分
- + [第 16 章](16_Global_Vars/Readme.md)：正确声明全局变量
+ + [第 14 章](14_ARM_Platform/Readme_zh.md)：生成 ARM 汇编代码
+ + [第 15 章](15_Pointers_pt1/Readme_zh.md)：指针，第一部分
+ + [第 16 章](16_Global_Vars/Readme_zh.md)：正确声明全局变量
  + [第 17 章](17_Scaling_Offsets/Readme.md)：更好的类型检查和指针偏移
  + [第 18 章](18_Lvalues_Revisited/Readme.md)：左值和右值再探
  + [第 19 章](19_Arrays_pt1/Readme.md)：数组，第一部分
