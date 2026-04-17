@@ -30,9 +30,9 @@
  + [第 14 章](14_ARM_Platform/Readme_zh.md)：生成 ARM 汇编代码
  + [第 15 章](15_Pointers_pt1/Readme_zh.md)：指针，第一部分
  + [第 16 章](16_Global_Vars/Readme_zh.md)：正确声明全局变量
- + [第 17 章](17_Scaling_Offsets/Readme.md)：更好的类型检查和指针偏移
- + [第 18 章](18_Lvalues_Revisited/Readme.md)：左值和右值再探
- + [第 19 章](19_Arrays_pt1/Readme.md)：数组，第一部分
+ + [第 17 章](17_Scaling_Offsets/Readme_zh.md)：更好的类型检查和指针偏移
+ + [第 18 章](18_Lvalues_Revisited/Readme_zh.md)：左值和右值再探
+ + [第 19 章](19_Arrays_pt1/Readme_zh.md)：数组，第一部分
  + [第 20 章](20_Char_Str_Literals/Readme.md)：字符和字符串字面量
  + [第 21 章](21_More_Operators/Readme.md)：更多的运算符
  + [第 22 章](22_Design_Locals/Readme.md)：局部变量和函数调用的设计思路
