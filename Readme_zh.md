@@ -70,14 +70,14 @@
  + [第 54 章](54_Reg_Spills/Readme_zh.md)：寄存器溢出
  + [第 55 章](55_Lazy_Evaluation/Readme_zh.md)：惰性求值
  + [第 56 章](56_Local_Arrays/Readme_zh.md)：局部数组
- + [第 57 章](57_Mop_up_pt3/Readme.md)：收尾工作，第三部分
- + [第 58 章](58_Ptr_Increments/Readme.md)：修复指针增减量
- + [第 59 章](59_WDIW_pt1/Readme.md)：为什么不能工作，第一部分
- + [第 60 章](60_TripleTest/Readme.md)：通过三重测试
- + [第 61 章](61_What_Next/Readme.md)：下一步是什么？
- + [第 62 章](62_Cleanup/Readme.md)：代码清理
- + [第 63 章](63_QBE/Readme.md)：使用 QBE 的新后端
- + [第 64 章](64_6809_Target/Readme.md)：6809 CPU 后端
+ + [第 57 章](57_Mop_up_pt3/Readme_zh.md)：收尾工作，第三部分
+ + [第 58 章](58_Ptr_Increments/Readme_zh.md)：修复指针增减量
+ + [第 59 章](59_WDIW_pt1/Readme_zh.md)：为什么不能工作，第一部分
+ + [第 60 章](60_TripleTest/Readme_zh.md)：通过三重测试
+ + [第 61 章](61_What_Next/Readme_zh.md)：下一步是什么？
+ + [第 62 章](62_Cleanup/Readme_zh.md)：代码清理
+ + [第 63 章](63_QBE/Readme_zh.md)：使用 QBE 的新后端
+ + [第 64 章](64_6809_Target/Readme_zh.md)：6809 CPU 后端
 
 我已经停止了 *acwj* 的工作，现在正在从头开始编写一种名为 [alic](https://github.com/DoctorWkt/alic) 的新语言。有兴趣可以看看！
 

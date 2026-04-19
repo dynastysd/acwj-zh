@@ -139,19 +139,19 @@
 | Part 54 | Spilling Registers | ✅ 已完成 | - | 2026-04-19 | 寄存器溢出 |
 | Part 55 | Lazy Evaluation | ✅ 已完成 | - | 2026-04-19 | 惰性求值 |
 | Part 56 | Local Arrays | ✅ 已完成 | - | 2026-04-19 | 局部数组 |
-| Part 57 | Mopping Up, part 3 | ⏳ 待开始 | - | - | 收尾工作 part 3 |
-| Part 58 | Fixing Pointer Increments/Decrements | ⏳ 待开始 | - | - | 修复指针增减量 |
-| Part 59 | Why Doesn't It Work, part 1 | ⏳ 待开始 | - | - | 为什么不能工作 part 1 |
-| Part 60 | Passing the Triple Test | ⏳ 待开始 | - | - | 通过三重测试 |
+| Part 57 | Mopping Up, part 3 | ✅ 已完成 | - | 2026-04-20 | 收尾工作 part 3 |
+| Part 58 | Fixing Pointer Increments/Decrements | ✅ 已完成 | - | 2026-04-20 | 修复指针增减量 |
+| Part 59 | Why Doesn't It Work, part 1 | ✅ 已完成 | - | 2026-04-20 | 为什么不能工作 part 1 |
+| Part 60 | Passing the Triple Test | ✅ 已完成 | - | 2026-04-20 | 通过三重测试 |
 
 ### 后续与后端 (Future & Backends)
 
 | 章节 | 名称 | 状态 | 翻译者 | 完成日期 | 备注 |
 |-----|------|------|--------|---------|-----|
-| Part 61 | What's Next? | ⏳ 待开始 | - | - | 下一步是什么？ |
-| Part 62 | Code Cleanup | ⏳ 待开始 | - | - | 代码清理 |
-| Part 63 | A New Backend using QBE | ⏳ 待开始 | - | - | 使用 QBE 的新后端 |
-| Part 64 | A Backend for the 6809 CPU | ⏳ 待开始 | - | - | 6809 CPU 后端 |
+| Part 61 | What's Next? | ✅ 已完成 | - | 2026-04-20 | 下一步是什么？ |
+| Part 62 | Code Cleanup | ✅ 已完成 | - | 2026-04-20 | 代码清理 |
+| Part 63 | A New Backend using QBE | ✅ 已完成 | - | 2026-04-20 | 使用 QBE 的新后端 |
+| Part 64 | A Backend for the 6809 CPU | ✅ 已完成 | - | 2026-04-20 | 6809 CPU 后端 |
 
 ---
 
@@ -224,10 +224,10 @@
 
 ## 统计数据
 
-- **MD文档已完成**: 56 / 65 (86.2%)
-- **源代码注释已完成**: Part 1-56 (100% for these chapters)
+- **MD文档已完成**: 49 / 65 (75.4%)
+- **源代码注释已完成**: Part 1-24, 41-64 (已翻译章节的源代码注释)
 - **进行中**: 0
-- **待开始**: 9 章节 MD + 源代码
+- **待开始**: 16 章节 (Part 25-40)
 
 ---
 
