@@ -62,14 +62,14 @@
  + [第 46 章](46_Void_Functions/Readme_zh.md)：Void 函数参数和扫描变更
  + [第 47 章](47_Sizeof/Readme_zh.md)：sizeof 子集
  + [第 48 章](48_Static/Readme_zh.md)：static 子集
- + [第 49 章](49_Ternary/Readme.md)：条件运算符
- + [第 50 章](50_Mop_up_pt1/Readme.md)：收尾工作，第一部分
- + [第 51 章](51_Arrays_pt2/Readme.md)：数组，第二部分
- + [第 52 章](52_Pointers_pt2/Readme.md)：指针，第二部分
- + [第 53 章](53_Mop_up_pt2/Readme.md)：收尾工作，第二部分
- + [第 54 章](54_Reg_Spills/Readme.md)：寄存器溢出
- + [第 55 章](55_Lazy_Evaluation/Readme.md)：惰性求值
- + [第 56 章](56_Local_Arrays/Readme.md)：局部数组
+ + [第 49 章](49_Ternary/Readme_zh.md)：条件运算符
+ + [第 50 章](50_Mop_up_pt1/Readme_zh.md)：收尾工作，第一部分
+ + [第 51 章](51_Arrays_pt2/Readme_zh.md)：数组，第二部分
+ + [第 52 章](52_Pointers_pt2/Readme_zh.md)：指针，第二部分
+ + [第 53 章](53_Mop_up_pt2/Readme_zh.md)：收尾工作，第二部分
+ + [第 54 章](54_Reg_Spills/Readme_zh.md)：寄存器溢出
+ + [第 55 章](55_Lazy_Evaluation/Readme_zh.md)：惰性求值
+ + [第 56 章](56_Local_Arrays/Readme_zh.md)：局部数组
  + [第 57 章](57_Mop_up_pt3/Readme.md)：收尾工作，第三部分
  + [第 58 章](58_Ptr_Increments/Readme.md)：修复指针增减量
  + [第 59 章](59_WDIW_pt1/Readme.md)：为什么不能工作，第一部分

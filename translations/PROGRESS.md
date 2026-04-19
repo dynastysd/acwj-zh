@@ -126,19 +126,19 @@
 | Part 46 | Void Function Parameters and Scanning Changes | ✅ 已完成 | - | 2026-04-19 | Void 函数参数和扫描变更 |
 | Part 47 | A Subset of `sizeof` | ✅ 已完成 | - | 2026-04-19 | sizeof 子集 |
 | Part 48 | A Subset of `static` | ✅ 已完成 | - | 2026-04-19 | static 子集 |
-| Part 49 | The Ternary Operator | ⏳ 待开始 | - | - | 条件运算符 |
-| Part 50 | Mopping Up, part 1 | ⏳ 待开始 | - | - | 收尾工作 part 1 |
+| Part 49 | The Ternary Operator | ✅ 已完成 | - | 2026-04-19 | 条件运算符 |
+| Part 50 | Mopping Up, part 1 | ✅ 已完成 | - | 2026-04-19 | 收尾工作 part 1 |
 
 ### 高级特性 (Advanced Features)
 
 | 章节 | 名称 | 状态 | 翻译者 | 完成日期 | 备注 |
 |-----|------|------|--------|---------|-----|
-| Part 51 | Arrays, part 2 | ⏳ 待开始 | - | - | 数组 part 2 |
-| Part 52 | Pointers, part 2 | ⏳ 待开始 | - | - | 指针 part 2 |
-| Part 53 | Mopping Up, part 2 | ⏳ 待开始 | - | - | 收尾工作 part 2 |
-| Part 54 | Spilling Registers | ⏳ 待开始 | - | - | 寄存器溢出 |
-| Part 55 | Lazy Evaluation | ⏳ 待开始 | - | - | 惰性求值 |
-| Part 56 | Local Arrays | ⏳ 待开始 | - | - | 局部数组 |
+| Part 51 | Arrays, part 2 | ✅ 已完成 | - | 2026-04-19 | 数组 part 2 |
+| Part 52 | Pointers, part 2 | ✅ 已完成 | - | 2026-04-19 | 指针 part 2 |
+| Part 53 | Mopping Up, part 2 | ✅ 已完成 | - | 2026-04-19 | 收尾工作 part 2 |
+| Part 54 | Spilling Registers | ✅ 已完成 | - | 2026-04-19 | 寄存器溢出 |
+| Part 55 | Lazy Evaluation | ✅ 已完成 | - | 2026-04-19 | 惰性求值 |
+| Part 56 | Local Arrays | ✅ 已完成 | - | 2026-04-19 | 局部数组 |
 | Part 57 | Mopping Up, part 3 | ⏳ 待开始 | - | - | 收尾工作 part 3 |
 | Part 58 | Fixing Pointer Increments/Decrements | ⏳ 待开始 | - | - | 修复指针增减量 |
 | Part 59 | Why Doesn't It Work, part 1 | ⏳ 待开始 | - | - | 为什么不能工作 part 1 |
@@ -209,6 +209,14 @@
 | Part 46 | `scan.c`, `stmt.c`, `misc.c`, `main.c`, `gen.c`, `expr.c`, `tree.c`, `decl.c`, `sym.c`, `cg.c`, `cg_arm.c`, `cgn.c`, `types.c`, `opt.c`, `defs.h`, `decl.h`, `data.h` | ✅ 已完成 |
 | Part 47 | `scan.c`, `stmt.c`, `misc.c`, `main.c`, `gen.c`, `expr.c`, `tree.c`, `decl.c`, `sym.c`, `cg.c`, `cg_arm.c`, `cgn.c`, `types.c`, `opt.c`, `defs.h`, `decl.h`, `data.h` | ✅ 已完成 |
 | Part 48 | `scan.c`, `stmt.c`, `misc.c`, `main.c`, `gen.c`, `expr.c`, `tree.c`, `decl.c`, `sym.c`, `cg.c`, `cg_arm.c`, `cgn.c`, `types.c`, `opt.c`, `defs.h`, `decl.h`, `data.h` | ✅ 已完成 |
+| Part 49 | `scan.c`, `stmt.c`, `misc.c`, `main.c`, `gen.c`, `expr.c`, `tree.c`, `decl.c`, `sym.c`, `cg.c`, `cg_arm.c`, `cgn.c`, `types.c`, `opt.c`, `defs.h`, `decl.h`, `data.h` | ✅ 已完成 |
+| Part 50 | `scan.c`, `stmt.c`, `misc.c`, `main.c`, `gen.c`, `expr.c`, `tree.c`, `decl.c`, `sym.c`, `cg.c`, `cg_arm.c`, `cgn.c`, `types.c`, `opt.c`, `defs.h`, `decl.h`, `data.h` | ✅ 已完成 |
+| Part 51 | `scan.c`, `stmt.c`, `misc.c`, `main.c`, `gen.c`, `expr.c`, `tree.c`, `decl.c`, `sym.c`, `cg.c`, `cg_arm.c`, `cgn.c`, `types.c`, `opt.c`, `defs.h`, `decl.h`, `data.h` | ✅ 已完成 |
+| Part 52 | `scan.c`, `stmt.c`, `misc.c`, `main.c`, `gen.c`, `expr.c`, `tree.c`, `decl.c`, `sym.c`, `cg.c`, `cg_arm.c`, `cgn.c`, `types.c`, `opt.c`, `defs.h`, `decl.h`, `data.h` | ✅ 已完成 |
+| Part 53 | `scan.c`, `stmt.c`, `misc.c`, `main.c`, `gen.c`, `expr.c`, `tree.c`, `decl.c`, `sym.c`, `cg.c`, `cg_arm.c`, `cgn.c`, `types.c`, `opt.c`, `defs.h`, `decl.h`, `data.h` | ✅ 已完成 |
+| Part 54 | `scan.c`, `stmt.c`, `misc.c`, `main.c`, `gen.c`, `expr.c`, `tree.c`, `decl.c`, `sym.c`, `cg.c`, `cg_arm.c`, `cgn.c`, `types.c`, `opt.c`, `defs.h`, `decl.h`, `data.h` | ✅ 已完成 |
+| Part 55 | 无新源代码（Readme only） | ✅ 已完成 |
+| Part 56 | `scan.c`, `stmt.c`, `misc.c`, `main.c`, `gen.c`, `expr.c`, `tree.c`, `decl.c`, `sym.c`, `cg.c`, `cg_arm.c`, `cgn.c`, `types.c`, `opt.c`, `defs.h`, `decl.h`, `data.h` | ✅ 已完成 |
 
 **源代码翻译规范**：参见 `GUIDELINES.md`
 
@@ -216,10 +224,10 @@
 
 ## 统计数据
 
-- **MD文档已完成**: 48 / 65 (73.8%)
-- **源代码注释已完成**: Part 1-48 (100% for these chapters)
+- **MD文档已完成**: 56 / 65 (86.2%)
+- **源代码注释已完成**: Part 1-56 (100% for these chapters)
 - **进行中**: 0
-- **待开始**: 17 章节 MD + 源代码
+- **待开始**: 9 章节 MD + 源代码
 
 ---
 
