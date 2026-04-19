@@ -38,10 +38,10 @@
  + [第 22 章](22_Design_Locals/Readme_zh.md)：局部变量和函数调用的设计思路
  + [第 23 章](23_Local_Variables/Readme_zh.md)：局部变量
  + [第 24 章](24_Function_Params/Readme_zh.md)：函数参数
- + [第 25 章](25_Function_Arguments/Readme.md)：函数调用和实参
- + [第 26 章](26_Prototypes/Readme.md)：函数原型
- + [第 27 章](27_Testing_Errors/Readme.md)：回归测试与惊喜
- + [第 28 章](28_Runtime_Flags/Readme.md)：添加更多运行时标志
+ + [第 25 章](25_Function_Arguments/Readme_zh.md)：函数调用和实参
+ + [第 26 章](26_Prototypes/Readme_zh.md)：函数原型
+ + [第 27 章](27_Testing_Errors/Readme_zh.md)：回归测试与惊喜
+ + [第 28 章](28_Runtime_Flags/Readme_zh.md)：添加更多运行时标志
  + [第 29 章](29_Refactoring/Readme.md)：一些重构
  + [第 30 章](30_Design_Composites/Readme.md)：设计 Struct、Union 和 Enum
  + [第 31 章](31_Struct_Declarations/Readme.md)：实现 Struct，第一部分
