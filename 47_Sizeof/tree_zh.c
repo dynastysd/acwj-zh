@@ -1,0 +1,219 @@
+#include "defs.h"
+#include "data.h"
+#include "decl.h"
+
+// AST 树函数
+// Copyright (c) 2019 Warren Toomey, GPL3
+
+// 构建并返回通用 AST 节点
+struct ASTnode *mkastnode(int op, int type,
+			  struct ASTnode *left,
+			  struct ASTnode *mid,
+			  struct ASTnode *right,
+			  struct symtable *sym, int intvalue) {
+  struct ASTnode *n;
+
+  // 分配新的 ASTnode
+  n = (struct ASTnode *) malloc(sizeof(struct ASTnode));
+  if (n == NULL)
+    fatal("Unable to malloc in mkastnode()");
+
+  // 复制字段值并返回
+  n->op = op;
+  n->type = type;
+  n->left = left;
+  n->mid = mid;
+  n->right = right;
+  n->sym = sym;
+  n->a_intvalue = intvalue;
+  return (n);
+}
+
+
+// 制作 AST 叶节点
+struct ASTnode *mkastleaf(int op, int type,
+			  struct symtable *sym, int intvalue) {
+  return (mkastnode(op, type, NULL, NULL, NULL, sym, intvalue));
+}
+
+// 制作一元 AST 节点：只有一个子节点
+struct ASTnode *mkastunary(int op, int type, struct ASTnode *left,
+			    struct symtable *sym, int intvalue) {
+  return (mkastnode(op, type, left, NULL, NULL, sym, intvalue));
+}
+
+// 生成并返回一个新的标签号
+// 仅用于 AST 转储目的
+static int gendumplabel(void) {
+  static int id = 1;
+  return (id++);
+}
+
+// 给定 AST 树，打印它并跟随
+// genAST() 遵循的树遍历
+void dumpAST(struct ASTnode *n, int label, int level) {
+  int Lfalse, Lstart, Lend;
+
+
+  switch (n->op) {
+    case A_IF:
+      Lfalse = gendumplabel();
+      for (int i = 0; i < level; i++)
+	fprintf(stdout, " ");
+      fprintf(stdout, "A_IF");
+      if (n->right) {
+	Lend = gendumplabel();
+	fprintf(stdout, ", end L%d", Lend);
+      }
+      fprintf(stdout, "\n");
+      dumpAST(n->left, Lfalse, level + 2);
+      dumpAST(n->mid, NOLABEL, level + 2);
+      if (n->right)
+	dumpAST(n->right, NOLABEL, level + 2);
+      return;
+    case A_WHILE:
+      Lstart = gendumplabel();
+      for (int i = 0; i < level; i++)
+	fprintf(stdout, " ");
+      fprintf(stdout, "A_WHILE, start L%d\n", Lstart);
+      Lend = gendumplabel();
+      dumpAST(n->left, Lend, level + 2);
+      dumpAST(n->right, NOLABEL, level + 2);
+      return;
+  }
+
+  // 对于 A_GLUE 将级别重置为 -2
+  if (n->op == A_GLUE)
+    level = -2;
+
+  // 通用 AST 节点处理
+  if (n->left)
+    dumpAST(n->left, NOLABEL, level + 2);
+  if (n->right)
+    dumpAST(n->right, NOLABEL, level + 2);
+
+
+  for (int i = 0; i < level; i++)
+    fprintf(stdout, " ");
+  switch (n->op) {
+    case A_GLUE:
+      fprintf(stdout, "\n\n");
+      return;
+    case A_FUNCTION:
+      fprintf(stdout, "A_FUNCTION %s\n", n->sym->name);
+      return;
+    case A_ADD:
+      fprintf(stdout, "A_ADD\n");
+      return;
+    case A_SUBTRACT:
+      fprintf(stdout, "A_SUBTRACT\n");
+      return;
+    case A_MULTIPLY:
+      fprintf(stdout, "A_MULTIPLY\n");
+      return;
+    case A_DIVIDE:
+      fprintf(stdout, "A_DIVIDE\n");
+      return;
+    case A_EQ:
+      fprintf(stdout, "A_EQ\n");
+      return;
+    case A_NE:
+      fprintf(stdout, "A_NE\n");
+      return;
+    case A_LT:
+      fprintf(stdout, "A_LE\n");
+      return;
+    case A_GT:
+      fprintf(stdout, "A_GT\n");
+      return;
+    case A_LE:
+      fprintf(stdout, "A_LE\n");
+      return;
+    case A_GE:
+      fprintf(stdout, "A_GE\n");
+      return;
+    case A_INTLIT:
+      fprintf(stdout, "A_INTLIT %d\n", n->a_intvalue);
+      return;
+    case A_STRLIT:
+      fprintf(stdout, "A_STRLIT rval label L%d\n", n->a_intvalue);
+      return;
+    case A_IDENT:
+      if (n->rvalue)
+	fprintf(stdout, "A_IDENT rval %s\n", n->sym->name);
+      else
+	fprintf(stdout, "A_IDENT %s\n", n->sym->name);
+      return;
+    case A_ASSIGN:
+      fprintf(stdout, "A_ASSIGN\n");
+      return;
+    case A_WIDEN:
+      fprintf(stdout, "A_WIDEN\n");
+      return;
+    case A_RETURN:
+      fprintf(stdout, "A_RETURN\n");
+      return;
+    case A_FUNCCALL:
+      fprintf(stdout, "A_FUNCCALL %s\n", n->sym->name);
+      return;
+    case A_ADDR:
+      fprintf(stdout, "A_ADDR %s\n", n->sym->name);
+      return;
+    case A_DEREF:
+      if (n->rvalue)
+	fprintf(stdout, "A_DEREF rval\n");
+      else
+	fprintf(stdout, "A_DEREF\n");
+      return;
+    case A_SCALE:
+      fprintf(stdout, "A_SCALE %d\n", n->a_size);
+      return;
+    case A_PREINC:
+      fprintf(stdout, "A_PREINC %s\n", n->sym->name);
+      return;
+    case A_PREDEC:
+      fprintf(stdout, "A_PREDEC %s\n", n->sym->name);
+      return;
+    case A_POSTINC:
+      fprintf(stdout, "A_POSTINC\n");
+      return;
+    case A_POSTDEC:
+      fprintf(stdout, "A_POSTDEC\n");
+      return;
+    case A_NEGATE:
+      fprintf(stdout, "A_NEGATE\n");
+      return;
+    case A_BREAK:
+      fprintf(stdout, "A_BREAK\n");
+      return;
+    case A_CONTINUE:
+      fprintf(stdout, "A_CONTINUE\n");
+      return;
+    case A_CASE:
+      fprintf(stdout, "A_CASE %d\n", n->a_intvalue);
+      return;
+    case A_DEFAULT:
+      fprintf(stdout, "A_DEFAULT\n");
+      return;
+    case A_SWITCH:
+      fprintf(stdout, "A_SWITCH\n");
+      return;
+    case A_CAST:
+      fprintf(stdout, "A_CAST %d\n", n->type);
+      return;
+    case A_ASPLUS:
+      fprintf(stdout, "A_ASPLUS\n");
+      return;
+    case A_ASMINUS:
+      fprintf(stdout, "A_ASMINUS\n");
+      return;
+    case A_ASSTAR:
+      fprintf(stdout, "A_ASSTAR\n");
+      return;
+    case A_ASSLASH:
+      fprintf(stdout, "A_ASSLASH\n");
+      return;
+    default:
+      fatald("Unknown dumpAST operator", n->op);
+  }
+}

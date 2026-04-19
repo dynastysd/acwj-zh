@@ -108,24 +108,24 @@
 |-----|------|------|--------|---------|-----|
 | Part 39 | Variable Initialisation, part 1 | ⏳ 待开始 | - | - | 变量初始化 part 1 |
 | Part 40 | Global Variable Initialisation | ⏳ 待开始 | - | - | 全局变量初始化 |
-| Part 41 | Local Variable Initialisation | ⏳ 待开始 | - | - | 局部变量初始化 |
+| Part 41 | Local Variable Initialisation | ✅ 已完成 | - | 2026-04-19 | 局部变量初始化 |
 
 ### 类型转换与运算符 (Casting & Operators)
 
 | 章节 | 名称 | 状态 | 翻译者 | 完成日期 | 备注 |
 |-----|------|------|--------|---------|-----|
-| Part 42 | Type Casting and NULL | ⏳ 待开始 | - | - | 类型转换和 NULL |
-| Part 43 | Bugfixes and More Operators | ⏳ 待开始 | - | - | Bug 修复和更多运算符 |
-| Part 44 | Constant Folding | ⏳ 待开始 | - | - | 常量折叠 |
+| Part 42 | Type Casting and NULL | ✅ 已完成 | - | 2026-04-19 | 类型转换和 NULL |
+| Part 43 | Bugfixes and More Operators | ✅ 已完成 | - | 2026-04-19 | Bug 修复和更多运算符 |
+| Part 44 | Constant Folding | ✅ 已完成 | - | 2026-04-19 | 常量折叠 |
 
 ### 收尾工作 (Mopping Up)
 
 | 章节 | 名称 | 状态 | 翻译者 | 完成日期 | 备注 |
 |-----|------|------|--------|---------|-----|
-| Part 45 | Global Variable Declarations, revisited | ⏳ 待开始 | - | - | 全局变量声明（再谈）|
-| Part 46 | Void Function Parameters and Scanning Changes | ⏳ 待开始 | - | - | Void 函数参数和扫描变更 |
-| Part 47 | A Subset of `sizeof` | ⏳ 待开始 | - | - | sizeof 子集 |
-| Part 48 | A Subset of `static` | ⏳ 待开始 | - | - | static 子集 |
+| Part 45 | Global Variable Declarations, revisited | ✅ 已完成 | - | 2026-04-19 | 全局变量声明（再谈）|
+| Part 46 | Void Function Parameters and Scanning Changes | ✅ 已完成 | - | 2026-04-19 | Void 函数参数和扫描变更 |
+| Part 47 | A Subset of `sizeof` | ✅ 已完成 | - | 2026-04-19 | sizeof 子集 |
+| Part 48 | A Subset of `static` | ✅ 已完成 | - | 2026-04-19 | static 子集 |
 | Part 49 | The Ternary Operator | ⏳ 待开始 | - | - | 条件运算符 |
 | Part 50 | Mopping Up, part 1 | ⏳ 待开始 | - | - | 收尾工作 part 1 |
 
@@ -201,6 +201,14 @@
 | Part 38 | `scan.c`, `stmt.c`, `misc.c`, `main.c`, `gen.c`, `expr.c`, `tree.c`, `decl.c`, `sym.c`, `cg.c`, `cg_arm.c`, `cgn.c`, `types.c`, `defs.h`, `decl.h`, `data.h` | ✅ 已完成 |
 | Part 39 | `scan.c`, `stmt.c`, `misc.c`, `main.c`, `gen.c`, `expr.c`, `tree.c`, `decl.c`, `sym.c`, `cg.c`, `cg_arm.c`, `cgn.c`, `types.c`, `defs.h`, `decl.h`, `data.h` | ✅ 已完成 |
 | Part 40 | `scan.c`, `stmt.c`, `misc.c`, `main.c`, `gen.c`, `expr.c`, `tree.c`, `decl.c`, `sym.c`, `cg.c`, `cg_arm.c`, `cgn.c`, `types.c`, `defs.h`, `decl.h`, `data.h` | ✅ 已完成 |
+| Part 41 | `scan.c`, `stmt.c`, `misc.c`, `main.c`, `gen.c`, `expr.c`, `tree.c`, `decl.c`, `sym.c`, `cg.c`, `cg_arm.c`, `cgn.c`, `types.c`, `defs.h`, `decl.h`, `data.h` | ✅ 已完成 |
+| Part 42 | `scan.c`, `stmt.c`, `misc.c`, `main.c`, `gen.c`, `expr.c`, `tree.c`, `decl.c`, `sym.c`, `cg.c`, `cg_arm.c`, `cgn.c`, `types.c`, `defs.h`, `decl.h`, `data.h` | ✅ 已完成 |
+| Part 43 | `scan.c`, `stmt.c`, `misc.c`, `main.c`, `gen.c`, `expr.c`, `tree.c`, `decl.c`, `sym.c`, `cg.c`, `cg_arm.c`, `cgn.c`, `types.c`, `defs.h`, `decl.h`, `data.h` | ✅ 已完成 |
+| Part 44 | `scan.c`, `stmt.c`, `misc.c`, `main.c`, `gen.c`, `expr.c`, `tree.c`, `decl.c`, `sym.c`, `cg.c`, `cg_arm.c`, `cgn.c`, `types.c`, `opt.c`, `defs.h`, `decl.h`, `data.h` | ✅ 已完成 |
+| Part 45 | `scan.c`, `stmt.c`, `misc.c`, `main.c`, `gen.c`, `expr.c`, `tree.c`, `decl.c`, `sym.c`, `cg.c`, `cg_arm.c`, `cgn.c`, `types.c`, `opt.c`, `defs.h`, `decl.h`, `data.h` | ✅ 已完成 |
+| Part 46 | `scan.c`, `stmt.c`, `misc.c`, `main.c`, `gen.c`, `expr.c`, `tree.c`, `decl.c`, `sym.c`, `cg.c`, `cg_arm.c`, `cgn.c`, `types.c`, `opt.c`, `defs.h`, `decl.h`, `data.h` | ✅ 已完成 |
+| Part 47 | `scan.c`, `stmt.c`, `misc.c`, `main.c`, `gen.c`, `expr.c`, `tree.c`, `decl.c`, `sym.c`, `cg.c`, `cg_arm.c`, `cgn.c`, `types.c`, `opt.c`, `defs.h`, `decl.h`, `data.h` | ✅ 已完成 |
+| Part 48 | `scan.c`, `stmt.c`, `misc.c`, `main.c`, `gen.c`, `expr.c`, `tree.c`, `decl.c`, `sym.c`, `cg.c`, `cg_arm.c`, `cgn.c`, `types.c`, `opt.c`, `defs.h`, `decl.h`, `data.h` | ✅ 已完成 |
 
 **源代码翻译规范**：参见 `GUIDELINES.md`
 
@@ -208,10 +216,10 @@
 
 ## 统计数据
 
-- **MD文档已完成**: 40 / 65 (61.5%)
-- **源代码注释已完成**: Part 1-40 (100% for these chapters)
+- **MD文档已完成**: 48 / 65 (73.8%)
+- **源代码注释已完成**: Part 1-48 (100% for these chapters)
 - **进行中**: 0
-- **待开始**: 25 章节 MD + 源代码
+- **待开始**: 17 章节 MD + 源代码
 
 ---
 

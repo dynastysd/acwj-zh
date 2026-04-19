@@ -54,14 +54,14 @@
  + [第 38 章](38_Dangling_Else/Readme_zh.md)：悬空 Else 问题
  + [第 39 章](39_Var_Initialisation_pt1/Readme_zh.md)：变量初始化，第一部分
  + [第 40 章](40_Var_Initialisation_pt2/Readme_zh.md)：全局变量初始化
- + [第 41 章](41_Local_Var_Init/Readme.md)：局部变量初始化
- + [第 42 章](42_Casting/Readme.md)：类型转换和 NULL
- + [第 43 章](43_More_Operators/Readme.md)：Bug 修复和更多运算符
- + [第 44 章](44_Fold_Optimisation/Readme.md)：常量折叠
- + [第 45 章](45_Globals_Again/Readme.md)：全局变量声明（再谈）
- + [第 46 章](46_Void_Functions/Readme.md)：Void 函数参数和扫描变更
- + [第 47 章](47_Sizeof/Readme.md)：sizeof 子集
- + [第 48 章](48_Static/Readme.md)：static 子集
+ + [第 41 章](41_Local_Var_Init/Readme_zh.md)：局部变量初始化
+ + [第 42 章](42_Casting/Readme_zh.md)：类型转换和 NULL
+ + [第 43 章](43_More_Operators/Readme_zh.md)：Bug 修复和更多运算符
+ + [第 44 章](44_Fold_Optimisation/Readme_zh.md)：常量折叠
+ + [第 45 章](45_Globals_Again/Readme_zh.md)：全局变量声明（再谈）
+ + [第 46 章](46_Void_Functions/Readme_zh.md)：Void 函数参数和扫描变更
+ + [第 47 章](47_Sizeof/Readme_zh.md)：sizeof 子集
+ + [第 48 章](48_Static/Readme_zh.md)：static 子集
  + [第 49 章](49_Ternary/Readme.md)：条件运算符
  + [第 50 章](50_Mop_up_pt1/Readme.md)：收尾工作，第一部分
  + [第 51 章](51_Arrays_pt2/Readme.md)：数组，第二部分
