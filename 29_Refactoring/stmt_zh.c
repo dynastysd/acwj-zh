@@ -1,0 +1,236 @@
+#include "defs.h"
+#include "data.h"
+#include "decl.h"
+
+// 语句的解析
+// Copyright (c) 2019 Warren Toomey, GPL3
+
+// 原型
+static struct ASTnode *single_statement(void);
+
+// compound_statement:          // 空,即没有语句
+//      |      statement
+//      |      statement statements
+//      ;
+//
+// statement: declaration
+//      |     expression_statement
+//      |     function_call
+//      |     if_statement
+//      |     while_statement
+//      |     for_statement
+//      |     return_statement
+//      ;
+
+
+// if_statement: if_head
+//      |        if_head 'else' compound_statement
+//      ;
+//
+// if_head: 'if' '(' true_false_expression ')' compound_statement  ;
+//
+// 解析IF语句包括任何
+// 可选的ELSE子句并返回其AST
+static struct ASTnode *if_statement(void) {
+  struct ASTnode *condAST, *trueAST, *falseAST = NULL;
+
+  // 确保有 'if' '('
+  match(T_IF, "if");
+  lparen();
+
+  // 解析后续表达式
+  // 和后面的 ')'。强制
+  // 非比较为布尔值
+  // 当树的操是比较时
+  condAST = binexpr(0);
+  if (condAST->op < A_EQ || condAST->op > A_GE)
+    condAST = mkastunary(A_TOBOOL, condAST->type, condAST, 0);
+  rparen();
+
+  // 获取复合语句的AST
+  trueAST = compound_statement();
+
+  // 如果我们有 'else',跳过它
+  // 并获取复合语句的AST
+  if (Token.token == T_ELSE) {
+    scan(&Token);
+    falseAST = compound_statement();
+  }
+  // 为此语句构建并返回AST
+  return (mkastnode(A_IF, P_NONE, condAST, trueAST, falseAST, 0));
+}
+
+
+// while_statement: 'while' '(' true_false_expression ')' compound_statement  ;
+//
+// 解析WHILE语句并返回其AST
+static struct ASTnode *while_statement(void) {
+  struct ASTnode *condAST, *bodyAST;
+
+  // 确保有 'while' '('
+  match(T_WHILE, "while");
+  lparen();
+
+  // 解析后续表达式
+  // 和后面的 ')'。强制
+  // 非比较为布尔值
+  // 当树的操是比较时
+  condAST = binexpr(0);
+  if (condAST->op < A_EQ || condAST->op > A_GE)
+    condAST = mkastunary(A_TOBOOL, condAST->type, condAST, 0);
+  rparen();
+
+  // 获取复合语句的AST
+  bodyAST = compound_statement();
+
+  // 为此语句构建并返回AST
+  return (mkastnode(A_WHILE, P_NONE, condAST, NULL, bodyAST, 0));
+}
+
+// for_statement: 'for' '(' preop_statement ';'
+//                          true_false_expression ';'
+//                          postop_statement ')' compound_statement  ;
+//
+// preop_statement:  statement          (目前)
+// postop_statement: statement          (目前)
+//
+// 解析FOR语句并返回其AST
+static struct ASTnode *for_statement(void) {
+  struct ASTnode *condAST, *bodyAST;
+  struct ASTnode *preopAST, *postopAST;
+  struct ASTnode *tree;
+
+  // 确保有 'for' '('
+  match(T_FOR, "for");
+  lparen();
+
+  // 获取pre_op语句和';'
+  preopAST = single_statement();
+  semi();
+
+  // 获取条件和';'
+  // 强制非比较为布尔值
+  // 当树的操是比较时
+  condAST = binexpr(0);
+  if (condAST->op < A_EQ || condAST->op > A_GE)
+    condAST = mkastunary(A_TOBOOL, condAST->type, condAST, 0);
+  semi();
+
+  // 获取post_op语句和')'
+  postopAST = single_statement();
+  rparen();
+
+  // 获取作为循环体的复合语句
+  bodyAST = compound_statement();
+
+  // 目前,所有四个子树都不能为NULL
+  // 稍后,我们会为某些缺失的情况更改语义
+
+  // 将复合语句和postop树粘合在一起
+  tree = mkastnode(A_GLUE, P_NONE, bodyAST, NULL, postopAST, 0);
+
+  // 用这个新循环体创建WHILE循环
+  tree = mkastnode(A_WHILE, P_NONE, condAST, NULL, tree, 0);
+
+  // 将preop树粘合到A_WHILE树
+  return (mkastnode(A_GLUE, P_NONE, preopAST, NULL, tree, 0));
+}
+
+// return_statement: 'return' '(' expression ')'  ;
+//
+// 解析return语句并返回其AST
+static struct ASTnode *return_statement(void) {
+  struct ASTnode *tree;
+
+  // 如果函数返回P_VOID则不能返回值
+  if (Symtable[Functionid].type == P_VOID)
+    fatal("不能从void函数返回");
+
+  // 确保有 'return' '('
+  match(T_RETURN, "return");
+  lparen();
+
+  // 解析后续表达式
+  tree = binexpr(0);
+
+  // 确保这与函数的类型兼容
+  tree = modify_type(tree, Symtable[Functionid].type, 0);
+  if (tree == NULL)
+    fatal("返回类型不兼容");
+
+  // 添加A_RETURN节点
+  tree = mkastunary(A_RETURN, P_NONE, tree, 0);
+
+  // 获取 ')'
+  rparen();
+  return (tree);
+}
+
+// 解析单个语句并返回其AST
+static struct ASTnode *single_statement(void) {
+  int type;
+
+  switch (Token.token) {
+  case T_CHAR:
+  case T_INT:
+  case T_LONG:
+
+    // 变量声明的开始
+    // 解析类型并获取标识符
+    // 然后解析声明的其余部分
+    // 并跳过分号
+    type = parse_type();
+    ident();
+    var_declaration(type, C_LOCAL);
+    semi();
+    return (NULL);		// 这里没有生成AST
+  case T_IF:
+    return (if_statement());
+  case T_WHILE:
+    return (while_statement());
+  case T_FOR:
+    return (for_statement());
+  case T_RETURN:
+    return (return_statement());
+  default:
+    // 目前,看看这是否是表达式
+    // 这处理赋值语句
+    return (binexpr(0));
+  }
+  return (NULL);		// 保持 -Wall 编译通过
+}
+
+// 解析复合语句
+// 并返回其AST
+struct ASTnode *compound_statement(void) {
+  struct ASTnode *left = NULL;
+  struct ASTnode *tree;
+
+  // 需要左花括号
+  lbrace();
+
+  while (1) {
+    // 解析单个语句
+    tree = single_statement();
+
+    // 某些语句后面必须跟分号
+    if (tree != NULL && (tree->op == A_ASSIGN ||
+			 tree->op == A_RETURN || tree->op == A_FUNCCALL))
+      semi();
+
+    // 对于每个新树,如果left为空则保存到left,
+    // 否则将left和新树粘合在一起
+    if (tree != NULL) {
+      if (left == NULL)
+	left = tree;
+      else
+	left = mkastnode(A_GLUE, P_NONE, left, NULL, tree, 0);
+    }
+    // 当遇到右花括号时,
+    // 跳过它并返回AST
+    if (Token.token == T_RBRACE) {
+      rbrace();
+      return (left);
+    }
+  }
+}

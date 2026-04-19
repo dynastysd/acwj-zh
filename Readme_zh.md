@@ -42,10 +42,10 @@
  + [第 26 章](26_Prototypes/Readme_zh.md)：函数原型
  + [第 27 章](27_Testing_Errors/Readme_zh.md)：回归测试与惊喜
  + [第 28 章](28_Runtime_Flags/Readme_zh.md)：添加更多运行时标志
- + [第 29 章](29_Refactoring/Readme.md)：一些重构
- + [第 30 章](30_Design_Composites/Readme.md)：设计 Struct、Union 和 Enum
- + [第 31 章](31_Struct_Declarations/Readme.md)：实现 Struct，第一部分
- + [第 32 章](32_Struct_Access_pt1/Readme.md)：访问 Struct 中的成员
+ + [第 29 章](29_Refactoring/Readme_zh.md)：一些重构
+ + [第 30 章](30_Design_Composites/Readme_zh.md)：设计 Struct、Union 和 Enum
+ + [第 31 章](31_Struct_Declarations/Readme_zh.md)：实现 Struct，第一部分
+ + [第 32 章](32_Struct_Access_pt1/Readme_zh.md)：访问 Struct 中的成员
  + [第 33 章](33_Unions/Readme.md)：实现 Union 和成员访问
  + [第 34 章](34_Enums_and_Typedefs/Readme.md)：Enum 和 Typedef
  + [第 35 章](35_Preprocessor/Readme.md)：C 预处理器

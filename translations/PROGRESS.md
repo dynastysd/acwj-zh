@@ -189,6 +189,10 @@
 | Part 26 | `scan.c`, `stmt.c`, `misc.c`, `main.c`, `gen.c`, `expr.c`, `tree.c`, `decl.c`, `sym.c`, `cg.c`, `cg_arm.c`, `cgn.c`, `types.c`, `defs.h`, `decl.h`, `data.h` | ✅ 已完成 |
 | Part 27 | `scan.c`, `stmt.c`, `misc.c`, `main.c`, `gen.c`, `expr.c`, `tree.c`, `decl.c`, `sym.c`, `cg.c`, `cg_arm.c`, `cgn.c`, `types.c`, `defs.h`, `decl.h`, `data.h` | ✅ 已完成 |
 | Part 28 | `scan.c`, `stmt.c`, `misc.c`, `main.c`, `gen.c`, `expr.c`, `tree.c`, `decl.c`, `sym.c`, `cg.c`, `cg_arm.c`, `cgn.c`, `types.c`, `defs.h`, `decl.h`, `data.h` | ✅ 已完成 |
+| Part 29 | `scan.c`, `stmt.c`, `misc.c`, `main.c`, `gen.c`, `expr.c`, `tree.c`, `decl.c`, `sym.c`, `cg.c`, `cg_arm.c`, `cgn.c`, `types.c`, `defs.h`, `decl.h`, `data.h` | ✅ 已完成 |
+| Part 30 | `scan.c`, `stmt.c`, `misc.c`, `main.c`, `gen.c`, `expr.c`, `tree.c`, `decl.c`, `sym.c`, `cg.c`, `cg_arm.c`, `cgn.c`, `types.c`, `defs.h`, `decl.h`, `data.h` | ✅ 已完成 |
+| Part 31 | `scan.c`, `stmt.c`, `misc.c`, `main.c`, `gen.c`, `expr.c`, `tree.c`, `decl.c`, `sym.c`, `cg.c`, `cg_arm.c`, `cgn.c`, `types.c`, `defs.h`, `decl.h`, `data.h` | ✅ 已完成 |
+| Part 32 | `scan.c`, `stmt.c`, `misc.c`, `main.c`, `gen.c`, `expr.c`, `tree.c`, `decl.c`, `sym.c`, `cg.c`, `cg_arm.c`, `cgn.c`, `types.c`, `defs.h`, `decl.h`, `data.h` | ✅ 已完成 |
 
 **源代码翻译规范**：参见 `GUIDELINES.md`
 
@@ -196,10 +200,10 @@
 
 ## 统计数据
 
-- **MD文档已完成**: 29 / 65 (44.6%)
-- **源代码注释已完成**: Part 1-28 (100% for these chapters)
+- **MD文档已完成**: 33 / 65 (50.8%)
+- **源代码注释已完成**: Part 1-32 (100% for these chapters)
 - **进行中**: 0
-- **待开始**: 41 章节 MD + 源代码
+- **待开始**: 33 章节 MD + 源代码
 
 ---
 
